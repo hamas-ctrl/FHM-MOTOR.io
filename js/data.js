@@ -1,5 +1,6 @@
 /* =========================================================
-   FHM MOTOR - Data & fungsi bersama (dipakai index & product)
+   FHM MOTOR - Data & fungsi bersama (dipakai semua halaman)
+   Ubah isi konten di file ini: produk, layanan, tips, FAQ, kontak.
    ========================================================= */
 const FHM = {
   WA_NUMBER: "6287846961119",   // format 62, tanpa 0 / +
@@ -27,25 +28,92 @@ const FHM = {
     phone: '<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>'
   },
 
-  /* Daftar produk. HARGA = CONTOH, silakan ganti sesuai harga bengkel */
-  kategori: ["Oli & Pelumas", "Ban & Velg", "Rem", "Busi & Kelistrikan", "Filter", "CVT & Rantai", "Aksesori"],
+  /* ---------- KONTAK (ISI SENDIRI) ---------- */
+  kontak: {
+    alamat: "[Isi alamat lengkap bengkel Anda di sini]",
+    nomorTampil: "0878 4696 1119",
+    jam: [
+      { hari: "Senin – Sabtu", waktu: "[00.00 – 00.00]" },
+      { hari: "Minggu", waktu: "[Buka / Tutup]" }
+    ],
+    instagram: "[Instagram / Facebook]"
+  },
+
+  /* ---------- PRODUK: OLI MOTOR (HARGA = CONTOH, GANTI SESUAI HARGA ASLI) ---------- */
+  kategori: ["Oli Matic", "Oli Bebek", "Oli Sport", "Oli Gardan", "Oli Lainnya"],
   products: [
-    { id: 1, nama: "Oli Mesin Motor Matic 0,8 L", kategori: "Oli & Pelumas", harga: 55000, ikon: "oli", deskripsi: "Oli khusus motor matic, menjaga mesin tetap halus dan dingin.", label: "Terlaris" },
-    { id: 2, nama: "Oli Mesin Motor Bebek/Sport 1 L", kategori: "Oli & Pelumas", harga: 65000, ikon: "oli", deskripsi: "Cocok untuk motor bebek dan sport dengan kopling manual." },
-    { id: 3, nama: "Oli Gardan Matic 120 ml", kategori: "Oli & Pelumas", harga: 15000, ikon: "oli", deskripsi: "Melumasi gigi transmisi akhir motor matic." },
-    { id: 4, nama: "Ban Tubeless Ring 14", kategori: "Ban & Velg", harga: 280000, ikon: "ban", deskripsi: "Ban tubeless untuk motor matic, grip baik di jalan kering maupun basah." },
-    { id: 5, nama: "Ban Dalam Motor", kategori: "Ban & Velg", harga: 35000, ikon: "ban", deskripsi: "Ban dalam untuk motor bebek dan sport." },
-    { id: 6, nama: "Kampas Rem Depan", kategori: "Rem", harga: 45000, ikon: "rem", deskripsi: "Kampas rem pakem dan tahan panas.", label: "Penting" },
-    { id: 7, nama: "Kampas Rem Belakang", kategori: "Rem", harga: 40000, ikon: "rem", deskripsi: "Pengganti kampas belakang yang sudah tipis." },
-    { id: 8, nama: "Busi Standar", kategori: "Busi & Kelistrikan", harga: 25000, ikon: "busi", deskripsi: "Busi pengapian standar untuk performa mesin stabil." },
-    { id: 9, nama: "Busi Iridium", kategori: "Busi & Kelistrikan", harga: 120000, ikon: "busi", deskripsi: "Pengapian lebih kuat dan tahan lama, tarikan lebih responsif." },
-    { id: 10, nama: "Aki Kering Motor", kategori: "Busi & Kelistrikan", harga: 185000, ikon: "busi", deskripsi: "Aki bebas perawatan, starter lebih mudah." },
-    { id: 11, nama: "Filter Udara", kategori: "Filter", harga: 35000, ikon: "filter", deskripsi: "Menyaring debu agar pembakaran bersih dan irit." },
-    { id: 12, nama: "Filter Oli", kategori: "Filter", harga: 30000, ikon: "filter", deskripsi: "Menjaga oli tetap bersih saat beredar di mesin." },
-    { id: 13, nama: "V-Belt (CVT) Matic", kategori: "CVT & Rantai", harga: 120000, ikon: "cvt", deskripsi: "Pengganti belt CVT yang aus agar tarikan kembali halus.", label: "Matic" },
-    { id: 14, nama: "Roller CVT Set", kategori: "CVT & Rantai", harga: 85000, ikon: "cvt", deskripsi: "Satu set roller untuk akselerasi lebih lancar." },
-    { id: 15, nama: "Kit Rantai & Gir", kategori: "CVT & Rantai", harga: 225000, ikon: "cvt", deskripsi: "Paket rantai dan gir untuk motor bebek dan sport." },
-    { id: 16, nama: "Helm Standar SNI", kategori: "Aksesori", harga: 150000, ikon: "aksesori", deskripsi: "Helm berstandar SNI demi keselamatan berkendara." }
+    { id: 1, nama: "Oli Mesin Matic SAE 10W-30 0,8 L", kategori: "Oli Matic", kekentalan: "10W-30", volume: "0,8 L", harga: 55000, deskripsi: "Oli harian untuk motor matic. Mesin lebih halus dan tarikan ringan.", label: "Terlaris" },
+    { id: 2, nama: "Oli Mesin Matic SAE 10W-40 0,8 L", kategori: "Oli Matic", kekentalan: "10W-40", volume: "0,8 L", harga: 58000, deskripsi: "Sedikit lebih kental, cocok untuk motor matic yang sering dipakai jauh." },
+    { id: 3, nama: "Oli Mesin Matic Full Synthetic 0,8 L", kategori: "Oli Matic", kekentalan: "10W-30", volume: "0,8 L", harga: 95000, deskripsi: "Perlindungan mesin lebih lama dan tahan panas untuk pemakaian berat.", label: "Premium" },
+    { id: 4, nama: "Oli Mesin Bebek SAE 20W-50 1 L", kategori: "Oli Bebek", kekentalan: "20W-50", volume: "1 L", harga: 60000, deskripsi: "Oli standar motor bebek dengan kopling manual, tahan pemakaian harian." },
+    { id: 5, nama: "Oli Mesin Bebek SAE 10W-40 1 L", kategori: "Oli Bebek", kekentalan: "10W-40", volume: "1 L", harga: 65000, deskripsi: "Lebih encer, membantu mesin cepat bersirkulasi saat dihidupkan pagi hari." },
+    { id: 6, nama: "Oli Mesin Sport 4T SAE 10W-40 1 L", kategori: "Oli Sport", kekentalan: "10W-40", volume: "1 L", harga: 80000, deskripsi: "Dirancang untuk motor sport berputaran tinggi dan kopling basah.", label: "Sport" },
+    { id: 7, nama: "Oli Mesin Sport Full Synthetic 1 L", kategori: "Oli Sport", kekentalan: "10W-40", volume: "1 L", harga: 135000, deskripsi: "Tahan panas dan gesekan tinggi, cocok untuk berkendara agresif." },
+    { id: 8, nama: "Oli Gardan Matic 120 ml", kategori: "Oli Gardan", kekentalan: "80W-90", volume: "120 ml", harga: 15000, deskripsi: "Melumasi gigi transmisi akhir motor matic. Ganti tiap beberapa kali ganti oli mesin." },
+    { id: 9, nama: "Oli Gardan Matic 150 ml", kategori: "Oli Gardan", kekentalan: "80W-90", volume: "150 ml", harga: 18000, deskripsi: "Ukuran lebih besar untuk matic yang kapasitas gardannya lebih banyak." },
+    { id: 10, nama: "Oli Mesin Motor Bebek Ekonomis 800 ml", kategori: "Oli Bebek", kekentalan: "20W-50", volume: "0,8 L", harga: 42000, deskripsi: "Pilihan hemat untuk perawatan rutin motor bebek." },
+    { id: 11, nama: "Oli Samping 2T 1 L", kategori: "Oli Lainnya", kekentalan: "2T", volume: "1 L", harga: 40000, deskripsi: "Khusus motor 2 tak yang memakai oli samping." },
+    { id: 12, nama: "Oli Shockbreaker / Fork 1 L", kategori: "Oli Lainnya", kekentalan: "SAE 10", volume: "1 L", harga: 70000, deskripsi: "Untuk peredam kejut depan agar suspensi tetap empuk dan stabil." },
+    { id: 13, nama: "Pembersih Mesin (Engine Flush) 300 ml", kategori: "Oli Lainnya", kekentalan: "-", volume: "300 ml", harga: 35000, deskripsi: "Dipakai sebelum ganti oli untuk membersihkan kerak di dalam mesin." },
+    { id: 14, nama: "Oli Rantai (Chain Lube) 150 ml", kategori: "Oli Lainnya", kekentalan: "-", volume: "150 ml", harga: 30000, deskripsi: "Menjaga rantai tidak berkarat dan berisik." }
+  ],
+
+  /* ---------- LAYANAN ---------- */
+  layanan: [
+    { judul: "Tune Up Semua Jenis", ikon: "tune", teks: "Menyetel ulang mesin agar tarikan halus, tenaga optimal, dan bahan bakar lebih irit.", poin: ["Motor matic", "Motor bebek", "Motor sport"] },
+    { judul: "Service Motor", ikon: "service", teks: "Pemeriksaan dan perawatan menyeluruh supaya motor tetap aman dan awet dipakai harian.", poin: ["Cek mesin & kelistrikan", "Cek rem, rantai/CVT, kampas"] },
+    { judul: "Karburator & Injeksi", ikon: "bbm", teks: "Pembersihan dan penyetelan sistem bahan bakar agar mesin tidak brebet dan mudah dihidupkan.", poin: ["Service karburator", "Pembersihan & cek injeksi"] },
+    { judul: "Ganti Oli", ikon: "oli", teks: "Oli segar menjaga mesin tetap dingin dan terlumasi. Perawatan paling mudah, manfaatnya paling besar.", poin: ["Oli mesin", "Oli gardan (matic)"] },
+    { judul: "Spareparts", ikon: "gear", teks: "Tersedia berbagai sparepart motor untuk kebutuhan penggantian dan perbaikan.", poin: ["Konsultasi pilihan sparepart", "Dipasang langsung mekanik"] },
+    { judul: "Bongkar Pasang Motor", ikon: "bongkar", teks: "Pembongkaran dan perakitan ulang untuk perbaikan berat atau penggantian komponen mesin.", poin: ["Perbaikan mesin", "Ganti komponen dalam"] },
+    { judul: "Tambal Ban", ikon: "ban", teks: "Ban bocor? Ditangani cepat supaya perjalanan Anda tidak terhenti lama.", poin: ["Tubeless & biasa", "Cek tekanan angin"] }
+  ],
+  opsiLayanan: ["Tune Up", "Service Motor", "Karburator & Injeksi", "Ganti Oli", "Beli / Pasang Sparepart", "Bongkar Pasang Motor", "Tambal Ban", "Belum tahu (konsultasi dulu)"],
+
+  keunggulan: [
+    { judul: "Pengerjaan Cepat", ikon: "clock", teks: "Antrean tertata dan mekanik bekerja efisien, sehingga motor Anda cepat kembali dipakai." },
+    { judul: "Diagnosa Tepat", ikon: "target", teks: "Masalah dicek dulu sampai ketemu sumbernya, jadi perbaikan tepat sasaran." },
+    { judul: "Terpercaya", ikon: "shield", teks: "Penjelasan jujur dan terbuka: apa yang rusak, apa yang perlu diganti, dan berapa biayanya." },
+    { judul: "Sparepart & Oli Lengkap", ikon: "oli", teks: "Tersedia berbagai oli dan sparepart motor, jadi tidak perlu keliling mencari." }
+  ],
+
+  /* ---------- CARA BOOKING ---------- */
+  langkah: [
+    { judul: "Isi Form Booking", teks: "Isi nama, jenis motor, layanan, dan keluhan pada form booking." },
+    { judul: "Kirim via WhatsApp", teks: "Data otomatis terkirim ke WhatsApp bengkel, tinggal tekan kirim." },
+    { judul: "Datang ke Bengkel", teks: "Bawa motor sesuai jadwal. Mekanik akan mengecek dan menjelaskan kondisinya." },
+    { judul: "Motor Selesai", teks: "Setelah disetujui dan dikerjakan, motor siap dibawa pulang dalam kondisi prima." }
+  ],
+
+  /* ---------- INFO & TIPS ---------- */
+  tips: [
+    ["Mesin brebet atau tersendat", "saat digas, bisa jadi karburator/injeksi kotor."],
+    ["Susah dihidupkan", "terutama pagi hari, cek busi, aki, dan sistem bahan bakar."],
+    ["Tarikan berat & boros bensin", "tanda perlu tune up."],
+    ["Suara kasar dari mesin atau CVT", "jangan ditunda agar kerusakan tidak melebar."],
+    ["Rem kurang pakem", "segera periksa kampas rem demi keselamatan."],
+    ["Asap knalpot berlebih", "bisa menandakan masalah pembakaran atau oli."]
+  ],
+  tipsOli: [
+    { judul: "Pilih sesuai jenis motor", teks: "Motor matic memakai oli khusus matic (JASO MB), sedangkan motor bebek dan sport dengan kopling manual memakai oli berstandar JASO MA." },
+    { judul: "Perhatikan kekentalan (SAE)", teks: "Angka seperti 10W-30 atau 10W-40 menunjukkan kekentalan. Ikuti rekomendasi di buku manual motor Anda." },
+    { judul: "Ganti tepat waktu", teks: "Jadwal ganti oli berbeda tiap motor dan oli. Cek buku manual, dan ganti lebih cepat jika motor sering dipakai macet atau beban berat." },
+    { judul: "Jangan lupa oli gardan", teks: "Khusus motor matic, oli gardan juga perlu diganti secara berkala selain oli mesin." }
+  ],
+  faq: [
+    { t: "Berapa lama waktu servis berkala?", j: "Tergantung jenis pekerjaannya. Ganti oli biasanya cepat, sedangkan tune up atau bongkar pasang butuh waktu lebih lama. Mekanik akan memberi perkiraan waktu sebelum pengerjaan." },
+    { t: "Apakah harus booking dulu?", j: "Tidak wajib, tetapi booking membantu Anda mendapat jadwal pasti dan mengurangi waktu menunggu." },
+    { t: "Apakah bisa konsultasi keluhan lewat WhatsApp?", j: "Bisa. Ceritakan keluhan motor Anda lewat WhatsApp, lalu kami bantu perkiraan penyebab dan langkah perbaikannya." },
+    { t: "Apa beda tune up motor matic, bebek, dan sport?", j: "Prinsipnya sama, yaitu menyetel mesin agar optimal. Bagian yang diperiksa menyesuaikan jenis motor, misalnya CVT pada matic atau rantai dan gigi pada bebek dan sport." },
+    { t: "Oli apa yang cocok untuk motor saya?", j: "Lihat jenis motor (matic, bebek, atau sport) dan kekentalan yang disarankan di buku manual. Di halaman Produk, gunakan filter kategori. Bingung? Tanyakan lewat WhatsApp." },
+    { t: "Apakah biaya dijelaskan di awal?", j: "Ya. Sebelum pengerjaan, mekanik menjelaskan kondisi motor dan perkiraan biaya agar Anda bisa memutuskan dengan tenang." }
+  ],
+
+  /* ---------- TESTIMONI (GANTI DENGAN ASLI) ---------- */
+  testimoni: [
+    { nama: "Nama Pelanggan", motor: "Pengguna Motor Matic", isi: "[Ganti dengan testimoni asli pelanggan Anda di sini.]" },
+    { nama: "Nama Pelanggan", motor: "Pengguna Motor Sport", isi: "[Ganti dengan testimoni asli pelanggan Anda di sini.]" },
+    { nama: "Nama Pelanggan", motor: "Pengguna Motor Bebek", isi: "[Ganti dengan testimoni asli pelanggan Anda di sini.]" }
   ],
 
   /* Format rupiah */
@@ -76,7 +144,7 @@ const FHM = {
       cartOpen(v) { document.body.style.overflow = v ? "hidden" : ""; }
     },
     methods: {
-      rupiah: FHM.rupiah,
+      rupiah(n) { return FHM.rupiah(n); },
       tambah(p) {
         const ada = this.cart.find(i => i.id === p.id);
         if (ada) ada.qty++;
@@ -100,6 +168,25 @@ const FHM = {
         const pesan = `Halo ${FHM.BENGKEL}, saya mau pesan:\n\n${baris}\n\nTotal: ${FHM.rupiah(this.cartTotal)}\nNama: ${this.namaPembeli || "-"}\n\nApakah stok tersedia? Terima kasih.`;
         window.open(FHM.wa(pesan), "_blank");
       }
+    }
+  },
+
+  /* Mixin dasar: menu mobile, ikon, link WA, animasi scroll (semua halaman) */
+  baseMixin: {
+    data() {
+      return {
+        menuOpen: false,
+        icons: FHM.icons,
+        waLink: FHM.wa("Halo " + FHM.BENGKEL + ", saya mau tanya soal servis motor."),
+        tahun: new Date().getFullYear(),
+        kontak: FHM.kontak
+      };
+    },
+    mounted() {
+      const io = new IntersectionObserver(es => es.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add("show"); io.unobserve(e.target); }
+      }), { threshold: 0.12 });
+      this.$nextTick(() => document.querySelectorAll(".reveal").forEach(el => io.observe(el)));
     }
   }
 };

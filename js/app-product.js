@@ -1,24 +1,21 @@
-/* Logika Vue - halaman Produk */
+/* Logika Vue - halaman product */
 Vue.createApp({
-  mixins: [FHM.cartMixin],
+  mixins: [FHM.baseMixin, FHM.cartMixin],
   data() {
     return {
-      menuOpen: false,
-      icons: FHM.icons,
       products: FHM.products,
       kategoriList: ["Semua", ...FHM.kategori],
       kategoriAktif: "Semua",
       cari: "",
-      urut: "default",
-      waLink: FHM.wa("Halo " + FHM.BENGKEL + ", saya mau tanya soal sparepart motor."),
-      tahun: new Date().getFullYear()
+      urut: "default"
     };
   },
   computed: {
     hasil() {
       let list = this.products.filter(p => {
         const cocokKat = this.kategoriAktif === "Semua" || p.kategori === this.kategoriAktif;
-        const cocokCari = p.nama.toLowerCase().includes(this.cari.toLowerCase().trim());
+        const kunci = this.cari.toLowerCase().trim();
+        const cocokCari = !kunci || (p.nama + " " + p.kekentalan).toLowerCase().includes(kunci);
         return cocokKat && cocokCari;
       });
       if (this.urut === "murah") list = [...list].sort((a, b) => a.harga - b.harga);

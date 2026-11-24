@@ -4,9 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Produk Sparepart & Oli | FHM MOTOR</title>
-  <meta name="description"
-    content="Daftar sparepart dan oli motor FHM MOTOR: oli, ban, rem, busi, filter, CVT, dan aksesori.">
+  <title>Produk Oli Motor | FHM MOTOR</title>
+  <meta name="description" content="Berbagai oli motor matic, bebek, sport, gardan, dan oli lainnya di FHM MOTOR.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -25,13 +24,14 @@
           <span class="brand-name">FHM <b>MOTOR</b></span>
         </a>
         <div class="nav-right">
-          <nav class="nav-links" :class="{open: menuOpen}">
-            <a href="index.html" @click="menuOpen=false">Beranda</a>
-            <a href="index.html#layanan" @click="menuOpen=false">Layanan</a>
-            <a href="product.html" class="active" @click="menuOpen=false">Produk</a>
-            <a href="index.html#faq" @click="menuOpen=false">Info &amp; Tips</a>
-            <a href="index.html#lokasi" @click="menuOpen=false">Lokasi</a>
-            <a href="index.html#booking" class="btn btn-red" @click="menuOpen=false"><span>Booking Servis</span></a>
+          <nav class="nav-links" :class="{open: menuOpen}" @click="menuOpen=false">
+            <a href="index.html">Beranda</a>
+            <a href="layanan.html">Layanan</a>
+            <a href="product.html" class="active">Produk</a>
+            <a href="booking.html">Cara Booking</a>
+            <a href="info.html">Info &amp; Tips</a>
+            <a href="lokasi.html">Lokasi</a>
+            <a href="booking.html#form" class="btn btn-red"><span>Booking Servis</span></a>
           </nav>
           <button class="cart-btn" @click="cartOpen=true" aria-label="Buka keranjang">
             <svg viewBox="0 0 24 24" v-html="icons.cart"></svg>
@@ -48,18 +48,18 @@
       <div class="shape gray s2"></div>
       <div class="container">
         <div class="breadcrumb"><a href="index.html">Beranda</a> / Produk</div>
-        <h1><span class="metal">Produk &amp;</span> <span class="red-text">Sparepart</span></h1>
-        <p>Cari oli, ban, rem, busi, dan sparepart lainnya. Masukkan ke keranjang, lalu pesan lewat WhatsApp.</p>
+        <h1><span class="metal">Oli</span> <span class="red-text">Motor</span></h1>
+        <p>Pilih oli sesuai jenis motor Anda, masukkan ke keranjang, lalu pesan lewat WhatsApp.</p>
       </div>
     </section>
 
     <section class="shop">
       <div class="container">
         <div class="price-note">Catatan: harga dan produk di halaman ini masih contoh. Ganti dengan data asli di
-          <code>js/data.js</code> (bagian <code>products</code>).</div>
-
+          <code>js/data.js</code> (bagian <code>products</code>).
+        </div>
         <div class="toolbar">
-          <input type="search" v-model="cari" placeholder="Cari produk, misalnya: oli, busi, kampas..."
+          <input type="search" v-model="cari" placeholder="Cari oli, misalnya: matic, 10W-40, gardan..."
             aria-label="Cari produk">
           <select v-model="kategoriAktif" aria-label="Kategori">
             <option v-for="k in kategoriList" :key="k">{{ k }}</option>
@@ -71,21 +71,19 @@
             <option value="nama">Nama A–Z</option>
           </select>
         </div>
-
         <div class="chips">
           <button class="chip" v-for="k in kategoriList" :key="k" :class="{on: kategoriAktif===k}"
             @click="kategoriAktif=k">{{ k }}</button>
         </div>
-
         <p class="result-info">Menampilkan {{ hasil.length }} dari {{ products.length }} produk</p>
-
         <div class="product-grid" v-if="hasil.length">
           <article class="product-card" v-for="p in hasil" :key="p.id">
             <div class="product-img"><span class="tag" v-if="p.label">{{ p.label }}</span><svg viewBox="0 0 24 24"
-                v-html="icons[p.ikon]"></svg></div>
+                v-html="icons.oli"></svg></div>
             <div class="product-body">
               <span class="product-cat">{{ p.kategori }}</span>
               <h3>{{ p.nama }}</h3>
+              <div class="spec"><span>{{ p.kekentalan }}</span><span>{{ p.volume }}</span></div>
               <p>{{ p.deskripsi }}</p>
               <div class="product-foot"><span class="price">{{ rupiah(p.harga) }}</span><button class="add-btn"
                   @click="tambah(p)">+ Keranjang</button></div>
@@ -104,9 +102,9 @@
       <div class="shape s1"></div>
       <div class="shape s2"></div>
       <div class="container">
-        <h2>Butuh Dipasangkan Langsung?</h2>
-        <p>Mekanik kami siap memasang sparepart yang Anda beli. Booking jadwalnya sekarang.</p>
-        <a href="index.html#booking" class="btn btn-light"><span>Booking Servis</span></a>
+        <h2>Bingung Memilih Oli?</h2>
+        <p>Tanyakan oli yang cocok untuk motor Anda, kami bantu pilihkan.</p>
+        <a href="info.html" class="btn btn-light"><span>Baca Tips Memilih Oli</span></a>
       </div>
     </section>
 
@@ -121,10 +119,11 @@
             <h5>Menu</h5>
             <ul>
               <li><a href="index.html">Beranda</a></li>
-              <li><a href="index.html#layanan">Layanan</a></li>
+              <li><a href="layanan.html">Layanan</a></li>
               <li><a href="product.html">Produk</a></li>
-              <li><a href="index.html#faq">Info &amp; Tips</a></li>
-              <li><a href="index.html#lokasi">Lokasi</a></li>
+              <li><a href="booking.html">Cara Booking</a></li>
+              <li><a href="info.html">Info &amp; Tips</a></li>
+              <li><a href="lokasi.html">Lokasi</a></li>
             </ul>
           </div>
           <div>
@@ -140,9 +139,9 @@
           <div>
             <h5>Kontak</h5>
             <ul>
-              <li>WA: <a :href="waLink" target="_blank" rel="noopener">0878 4696 1119</a></li>
-              <li>[Alamat bengkel]</li>
-              <li>[Instagram / Facebook]</li>
+              <li>WA: <a :href="waLink" target="_blank" rel="noopener">{{ kontak.nomorTampil }}</a></li>
+              <li>{{ kontak.alamat }}</li>
+              <li>{{ kontak.instagram }}</li>
             </ul>
           </div>
         </div>
@@ -150,7 +149,6 @@
       </div>
     </footer>
 
-    <!-- KERANJANG -->
     <transition name="fade">
       <div class="overlay" v-if="cartOpen" @click="cartOpen=false"></div>
     </transition>
@@ -176,7 +174,7 @@
               </div>
             </div>
             <div style="text-align:right">
-              <strong>{{ rupiah(item.harga*item.qty) }}</strong>
+              <strong>{{ rupiah(item.harga*item.qty) }}</strong><br>
               <button class="remove" @click="hapus(item)">Hapus</button>
             </div>
           </div>
