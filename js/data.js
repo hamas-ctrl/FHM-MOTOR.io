@@ -107,7 +107,7 @@ const FHM = {
 
   rupiah(n) { return "Rp " + Number(n).toLocaleString("id-ID"); },
 
-  wa(pesan) { return "https://wa.me/6287846961119?text=" + encodeURIComponent(pesan); },
+  wa(pesan) { return "https://wa.me/6287846961119" + encodeURIComponent(pesan); },
 
   loadCart() {
     try { return JSON.parse(localStorage.getItem("fhm_cart")) || []; } catch (e) { return []; }
