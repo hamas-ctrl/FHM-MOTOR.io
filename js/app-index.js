@@ -1,4 +1,3 @@
-/* Logika Vue - halaman index */
 Vue.createApp({
   mixins: [FHM.baseMixin, FHM.cartMixin],
   data() {

@@ -1,12 +1,7 @@
-/* =========================================================
-   FHM MOTOR - Data & fungsi bersama (dipakai semua halaman)
-   Ubah isi konten di file ini: produk, layanan, tips, FAQ, kontak.
-   ========================================================= */
 const FHM = {
   WA_NUMBER: "6287846961119",   // format 62, tanpa 0 / +
   BENGKEL: "FHM MOTOR",
 
-  /* Ikon SVG (isi dalam <svg viewBox="0 0 24 24">) */
   icons: {
     oli: '<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/>',
     ban: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v6M12 15v6M3 12h6M15 12h6"/>',
@@ -28,7 +23,6 @@ const FHM = {
     phone: '<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>'
   },
 
-  /* ---------- KONTAK (ISI SENDIRI) ---------- */
   kontak: {
     alamat: "[Isi alamat lengkap bengkel Anda di sini]",
     nomorTampil: "0878 4696 1119",
@@ -39,7 +33,6 @@ const FHM = {
     instagram: "[Instagram / Facebook]"
   },
 
-  /* ---------- PRODUK: OLI MOTOR (HARGA = CONTOH, GANTI SESUAI HARGA ASLI) ---------- */
   kategori: ["Oli Matic", "Oli Bebek", "Oli Sport", "Oli Gardan", "Oli Lainnya"],
   products: [
     { id: 1, nama: "Oli Mesin Matic SAE 10W-30 0,8 L", kategori: "Oli Matic", kekentalan: "10W-30", volume: "0,8 L", harga: 55000, deskripsi: "Oli harian untuk motor matic. Mesin lebih halus dan tarikan ringan.", label: "Terlaris" },
@@ -58,7 +51,6 @@ const FHM = {
     { id: 14, nama: "Oli Rantai (Chain Lube) 150 ml", kategori: "Oli Lainnya", kekentalan: "-", volume: "150 ml", harga: 30000, deskripsi: "Menjaga rantai tidak berkarat dan berisik." }
   ],
 
-  /* ---------- LAYANAN ---------- */
   layanan: [
     { judul: "Tune Up Semua Jenis", ikon: "tune", teks: "Menyetel ulang mesin agar tarikan halus, tenaga optimal, dan bahan bakar lebih irit.", poin: ["Motor matic", "Motor bebek", "Motor sport"] },
     { judul: "Service Motor", ikon: "service", teks: "Pemeriksaan dan perawatan menyeluruh supaya motor tetap aman dan awet dipakai harian.", poin: ["Cek mesin & kelistrikan", "Cek rem, rantai/CVT, kampas"] },
@@ -77,7 +69,6 @@ const FHM = {
     { judul: "Sparepart & Oli Lengkap", ikon: "oli", teks: "Tersedia berbagai oli dan sparepart motor, jadi tidak perlu keliling mencari." }
   ],
 
-  /* ---------- CARA BOOKING ---------- */
   langkah: [
     { judul: "Isi Form Booking", teks: "Isi nama, jenis motor, layanan, dan keluhan pada form booking." },
     { judul: "Kirim via WhatsApp", teks: "Data otomatis terkirim ke WhatsApp bengkel, tinggal tekan kirim." },
@@ -85,7 +76,6 @@ const FHM = {
     { judul: "Motor Selesai", teks: "Setelah disetujui dan dikerjakan, motor siap dibawa pulang dalam kondisi prima." }
   ],
 
-  /* ---------- INFO & TIPS ---------- */
   tips: [
     ["Mesin brebet atau tersendat", "saat digas, bisa jadi karburator/injeksi kotor."],
     ["Susah dihidupkan", "terutama pagi hari, cek busi, aki, dan sistem bahan bakar."],
@@ -109,20 +99,16 @@ const FHM = {
     { t: "Apakah biaya dijelaskan di awal?", j: "Ya. Sebelum pengerjaan, mekanik menjelaskan kondisi motor dan perkiraan biaya agar Anda bisa memutuskan dengan tenang." }
   ],
 
-  /* ---------- TESTIMONI (GANTI DENGAN ASLI) ---------- */
   testimoni: [
     { nama: "Nama Pelanggan", motor: "Pengguna Motor Matic", isi: "[Ganti dengan testimoni asli pelanggan Anda di sini.]" },
     { nama: "Nama Pelanggan", motor: "Pengguna Motor Sport", isi: "[Ganti dengan testimoni asli pelanggan Anda di sini.]" },
     { nama: "Nama Pelanggan", motor: "Pengguna Motor Bebek", isi: "[Ganti dengan testimoni asli pelanggan Anda di sini.]" }
   ],
 
-  /* Format rupiah */
   rupiah(n) { return "Rp " + Number(n).toLocaleString("id-ID"); },
 
-  /* Link WhatsApp */
   wa(pesan) { return "https://wa.me/" + this.WA_NUMBER + "?text=" + encodeURIComponent(pesan); },
 
-  /* Penyimpanan keranjang (localStorage) agar sama di semua halaman */
   loadCart() {
     try { return JSON.parse(localStorage.getItem("fhm_cart")) || []; } catch (e) { return []; }
   },
@@ -130,7 +116,6 @@ const FHM = {
     try { localStorage.setItem("fhm_cart", JSON.stringify(c)); } catch (e) { }
   },
 
-  /* Mixin Vue: logika keranjang dipakai di kedua halaman */
   cartMixin: {
     data() {
       return { cart: FHM.loadCart(), cartOpen: false, namaPembeli: "", toast: "", toastTimer: null };
@@ -171,7 +156,6 @@ const FHM = {
     }
   },
 
-  /* Mixin dasar: menu mobile, ikon, link WA, animasi scroll (semua halaman) */
   baseMixin: {
     data() {
       return {

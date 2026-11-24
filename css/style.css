@@ -1,7 +1,3 @@
-/* =========================================================
-   FHM MOTOR - Landing Page
-   Warna & gaya mengikuti logo/banner: hitam, merah, perak
-   ========================================================= */
 :root {
   --black: #08080a;
   --dark: #121216;
@@ -61,7 +57,6 @@ section {
   padding: 90px 0
 }
 
-/* ---------- Teks metalik ---------- */
 .metal {
   background: var(--silver-grad);
   -webkit-background-clip: text;
@@ -78,7 +73,6 @@ section {
   font-style: italic
 }
 
-/* ---------- Judul section ---------- */
 .section-head {
   text-align: center;
   max-width: 680px;
@@ -118,7 +112,6 @@ section {
   border-radius: 2px;
 }
 
-/* ---------- Tombol ---------- */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -177,7 +170,6 @@ section {
   transform: skewX(-12deg) translateY(-3px)
 }
 
-/* ---------- Bentuk segitiga dekoratif ---------- */
 .shape {
   position: absolute;
   pointer-events: none;
@@ -196,9 +188,6 @@ section {
   background: linear-gradient(135deg, #b9bcc2 0%, #5b5e65 100%)
 }
 
-/* =========================================================
-   NAVBAR
-   ========================================================= */
 .navbar {
   position: fixed;
   inset: 0 0 auto 0;
@@ -297,9 +286,6 @@ section {
   transition: .3s
 }
 
-/* =========================================================
-   HERO
-   ========================================================= */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -473,7 +459,6 @@ section {
   }
 }
 
-/* ---------- Strip merek ---------- */
 .brands {
   padding: 0;
   background: linear-gradient(90deg, #d8dadf, #f6f7f9, #d8dadf);
@@ -528,9 +513,6 @@ section {
   color: #1c8a2e
 }
 
-/* =========================================================
-   KEUNGGULAN
-   ========================================================= */
 .why {
   background: var(--dark)
 }
@@ -623,9 +605,6 @@ section {
   color: var(--silver)
 }
 
-/* =========================================================
-   LAYANAN
-   ========================================================= */
 .services {
   background: linear-gradient(180deg, #07070a, #0d0d11);
   overflow: hidden
@@ -742,9 +721,6 @@ section {
   z-index: 2
 }
 
-/* =========================================================
-   BANNER
-   ========================================================= */
 .banner-sec {
   background: var(--dark);
   padding: 70px 0
@@ -762,9 +738,6 @@ section {
   width: 100%
 }
 
-/* =========================================================
-   ALUR BOOKING
-   ========================================================= */
 .steps {
   background: linear-gradient(180deg, #0d0d11, #08080a);
   overflow: hidden
@@ -836,9 +809,6 @@ section {
   color: var(--silver)
 }
 
-/* =========================================================
-   FORM BOOKING
-   ========================================================= */
 .booking {
   background: var(--dark);
   overflow: hidden
@@ -983,9 +953,6 @@ section {
   margin-top: 12px
 }
 
-/* =========================================================
-   TIPS & FAQ
-   ========================================================= */
 .faq {
   background: linear-gradient(180deg, #08080a, #101015)
 }
@@ -1089,9 +1056,6 @@ details p {
   font-size: .9rem
 }
 
-/* =========================================================
-   TESTIMONI
-   ========================================================= */
 .testi {
   background: var(--dark);
   overflow: hidden
@@ -1174,9 +1138,6 @@ details p {
   z-index: 2;
 }
 
-/* =========================================================
-   LOKASI
-   ========================================================= */
 .location {
   background: linear-gradient(180deg, #101015, #08080a)
 }
@@ -1261,9 +1222,6 @@ details p {
   border: 0
 }
 
-/* =========================================================
-   CTA AKHIR
-   ========================================================= */
 .final-cta {
   padding: 70px 0;
   background: var(--red-grad);
@@ -1317,9 +1275,6 @@ details p {
   box-shadow: 0 14px 34px rgba(0, 0, 0, .4)
 }
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
 footer {
   background: #040405;
   padding: 60px 0 0;
@@ -1386,7 +1341,6 @@ footer li a:hover {
   color: var(--red-bright)
 }
 
-/* ---------- Tombol WhatsApp melayang ---------- */
 .wa-float {
   position: fixed;
   right: 20px;
@@ -1433,7 +1387,6 @@ footer li a:hover {
   }
 }
 
-/* ---------- Animasi muncul ---------- */
 .reveal {
   opacity: 0;
   transform: translateY(34px);
@@ -1445,9 +1398,6 @@ footer li a:hover {
   transform: none
 }
 
-/* =========================================================
-   RESPONSIF
-   ========================================================= */
 @media (max-width:980px) {
 
   .hero-grid,
@@ -1580,9 +1530,6 @@ footer li a:hover {
   }
 }
 
-/* =========================================================
-   TAMBAHAN UNTUK VUE & HALAMAN PRODUK
-   ========================================================= */
 [v-cloak] {
   display: none
 }
@@ -1640,7 +1587,6 @@ footer li a:hover {
   place-items: center;
 }
 
-/* Hero halaman produk */
 .page-hero {
   padding: 140px 0 60px;
   text-align: center;
@@ -1695,7 +1641,6 @@ footer li a:hover {
   color: var(--red-bright)
 }
 
-/* Toolbar pencarian */
 .shop {
   background: var(--dark);
   padding-top: 50px
@@ -1775,7 +1720,6 @@ footer li a:hover {
   margin-bottom: 22px;
 }
 
-/* Kartu produk */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1930,7 +1874,6 @@ footer li a:hover {
   margin-bottom: 8px
 }
 
-/* Produk unggulan di index */
 .featured {
   background: var(--dark)
 }
@@ -1944,7 +1887,6 @@ footer li a:hover {
   margin-top: 42px
 }
 
-/* Drawer keranjang */
 .overlay {
   position: fixed;
   inset: 0;
@@ -2132,7 +2074,6 @@ footer li a:hover {
   opacity: 0
 }
 
-/* Toast */
 .toast {
   position: fixed;
   left: 50%;
@@ -2206,7 +2147,6 @@ footer li a:hover {
   }
 }
 
-/* Info spesifikasi oli */
 .spec {
   display: flex;
   gap: 8px;
