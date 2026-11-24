@@ -24,13 +24,13 @@ const FHM = {
   },
 
   kontak: {
-    alamat: "[Isi alamat lengkap bengkel Anda di sini]",
+    alamat: "Jln.Desa Wanakarta, Ruko Bakso Khayalan",
     nomorTampil: "0878 4696 1119",
     jam: [
-      { hari: "Senin – Sabtu", waktu: "[00.00 – 00.00]" },
-      { hari: "Minggu", waktu: "[Buka / Tutup]" }
+      { hari: "Senin – Sabtu", waktu: "[09.00 – 21.00]" },
+      { hari: "Minggu", waktu: "[Tutup]" }
     ],
-    instagram: "[Instagram / Facebook]"
+    instagram: "@fhmmotorofficial"
   },
 
   kategori: ["Oli Matic", "Oli Bebek", "Oli Sport", "Oli Gardan", "Oli Lainnya"],
@@ -100,14 +100,14 @@ const FHM = {
   ],
 
   testimoni: [
-    { nama: "Nama Pelanggan", motor: "Pengguna Motor Matic", isi: "[Ganti dengan testimoni asli pelanggan Anda di sini.]" },
-    { nama: "Nama Pelanggan", motor: "Pengguna Motor Sport", isi: "[Ganti dengan testimoni asli pelanggan Anda di sini.]" },
-    { nama: "Nama Pelanggan", motor: "Pengguna Motor Bebek", isi: "[Ganti dengan testimoni asli pelanggan Anda di sini.]" }
+    { nama: "Riski Munadi", motor: "Pengguna Motor Matic", isi: "Servis disini enak, pelayananya ramah dan jelas banget pas njelasin motornya. Thanks FHM MOTOR!" },
+    { nama: "Andrey", motor: "Pengguna Motor Sport", isi: "Mantep servis disini, harga terjangkau, mekaniknya juga detail dalam menjelaskan setiap pengerjaannya.Recommended banget pokoknya!" },
+    { nama: "Fathur", motor: "Pengguna Motor Bebek", isi: "Pelayanannya cepat dan memuaskan. Motor saya jadi lebih halus setelah diservis. Recommended!" }
   ],
 
   rupiah(n) { return "Rp " + Number(n).toLocaleString("id-ID"); },
 
-  wa(pesan) { return "https://wa.me/" + this.WA_NUMBER + "?text=" + encodeURIComponent(pesan); },
+  wa(pesan) { return "https://wa.me6287846961119/" + this.WA_NUMBER + "?text=" + encodeURIComponent(pesan); },
 
   loadCart() {
     try { return JSON.parse(localStorage.getItem("fhm_cart")) || []; } catch (e) { return []; }
