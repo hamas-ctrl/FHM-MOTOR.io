@@ -1,5 +1,5 @@
 const FHM = {
-  WA_NUMBER: "6287846961119",   // format 62, tanpa 0 / +
+  WA_NUMBER: "6287846961119",
   BENGKEL: "FHM MOTOR",
 
   icons: {
@@ -107,7 +107,10 @@ const FHM = {
 
   rupiah(n) { return "Rp " + Number(n).toLocaleString("id-ID"); },
 
-  wa(pesan) { return "https://wa.me/6287846961119" + encodeURIComponent(pesan); },
+  wa(pesan) {
+    const nomor = this.WA_NUMBER || "6287846961119";
+    return pesan ? "https://wa.me/" + nomor + "?text=" + encodeURIComponent(pesan) : "https://wa.me/" + nomor;
+  },
 
   loadCart() {
     try { return JSON.parse(localStorage.getItem("fhm_cart")) || []; } catch (e) { return []; }
