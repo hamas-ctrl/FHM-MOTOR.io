@@ -76,8 +76,11 @@
         <p class="result-info">Menampilkan {{ hasil.length }} dari {{ products.length }} produk</p>
         <div class="product-grid" v-if="hasil.length">
           <article class="product-card" v-for="p in hasil" :key="p.id">
-            <div class="product-img"><span class="tag" v-if="p.label">{{ p.label }}</span><svg viewBox="0 0 24 24"
-                v-html="icons.oli"></svg></div>
+            <div class="product-img">
+              <span class="tag" v-if="p.label">{{ p.label }}</span>
+              <img v-if="p.gambar" :src="p.gambar" :alt="p.nama">
+              <div v-else v-html="icons.oli"></div>
+            </div>
             <div class="product-body">
               <span class="product-cat">{{ p.kategori }}</span>
               <h3>{{ p.nama }}</h3>

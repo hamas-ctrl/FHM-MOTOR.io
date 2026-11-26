@@ -35,8 +35,8 @@ const FHM = {
 
   kategori: ["Oli Matic", "Oli Bebek", "Oli Sport", "Oli Gardan", "Oli Lainnya"],
   products: [
-    { id: 1, nama: "Oli Mesin Matic SAE 10W-30 0,8 L", kategori: "Oli Matic", kekentalan: "10W-30", volume: "0,8 L", harga: 55000, deskripsi: "Oli harian untuk motor matic. Mesin lebih halus dan tarikan ringan.", label: "Terlaris" },
-    { id: 2, nama: "Oli Mesin Matic SAE 10W-40 0,8 L", kategori: "Oli Matic", kekentalan: "10W-40", volume: "0,8 L", harga: 58000, deskripsi: "Sedikit lebih kental, cocok untuk motor matic yang sering dipakai jauh." },
+    { id: 1, nama: "Oli Mesin Matic MPX2 AHM Oil SAE 10W-30 0,8 L", kategori: "Oli Matic", kekentalan: "10W-30", volume: "0,8 L", harga: 55000, deskripsi: "Oli harian untuk motor matic. Mesin lebih halus dan tarikan ringan.", label: "Terlaris", gambar: "./img/oli-mpx.jpg" },
+    { id: 2, nama: "Oli Mesin Matic Shell advance SAE 10W-40 0,8 L", kategori: "Oli Matic", kekentalan: "10W-40", volume: "0,8 L", harga: 58000, deskripsi: "Sedikit lebih kental, cocok untuk motor matic yang sering dipakai jauh.", gambar: "./img/shell-advance.jpg" },
     { id: 3, nama: "Oli Mesin Matic Full Synthetic 0,8 L", kategori: "Oli Matic", kekentalan: "10W-30", volume: "0,8 L", harga: 95000, deskripsi: "Perlindungan mesin lebih lama dan tahan panas untuk pemakaian berat.", label: "Premium" },
     { id: 4, nama: "Oli Mesin Bebek SAE 20W-50 1 L", kategori: "Oli Bebek", kekentalan: "20W-50", volume: "1 L", harga: 60000, deskripsi: "Oli standar motor bebek dengan kopling manual, tahan pemakaian harian." },
     { id: 5, nama: "Oli Mesin Bebek SAE 10W-40 1 L", kategori: "Oli Bebek", kekentalan: "10W-40", volume: "1 L", harga: 65000, deskripsi: "Lebih encer, membantu mesin cepat bersirkulasi saat dihidupkan pagi hari." },
